@@ -1,0 +1,105 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fake News 📰 Detection System</title>
+    <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <style>
+        input[type=text],
+        select,
+        textarea {
+            width: 40%;
+            padding: 10px;
+            color: rgb(255, 0, 0);
+            border: 3px transparent rgb(255, 255, 0);
+            border-radius: 1px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: horizontal;
+            border-width: 5px;
+            background: transparent;
+            border-color: rgb(255, 255, 0);
+            backdrop-filter: blur(2px);
+            font-weight: bold;
+        }
+
+        textarea:focus,
+        input:focus {
+            color: rgb(255, 0, 0);
+        }
+
+        button {
+            background-color: transparent;
+            color: rgb(0, 0, 255);
+            padding: 14px 20px;
+            margin: 8px 0;
+            border-width: 5px;
+            border-color: rgb(255, 0, 242);
+            backdrop-filter: blur(2px);
+            cursor: pointer;
+            width: 45%;
+            font-size: 30px;
+            font-weight: bolder;
+
+        }
+
+        button:hover {
+            opacity: 0.8;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+        }
+
+        div {
+            text-align: center;
+        }
+
+        body {
+
+            background-image: url('https://sunlightfoundation.com/wp-content/uploads/sites/2/2018/01/fake-news-animation.gif');
+
+            background-size: 100% 100%;
+
+            background-size: 100% 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login">
+        <strong>
+            <h1 style="text-align:center;color: rgb(0, 255, 0);">FAKE NEWS 📰 DETECTION </br> By Rahul Dhanola
+                (R177219139)
+            </h1>
+        </strong>
+        <form action="{{ url_for('predict')}}" method="POST">
+            <textarea name="news" rows="6" cols="20" required="required" style="font-size:18pt"></textarea>
+            <br>
+
+            <button type="submit" class="btn btn-primary btn-block btn-large">Predict News</button>
+            <div class="results">
+
+                {% if prediction == ['FAKE']%}
+                <h2 style="color:red;"><b>Looking Spam⚠️News 📰</b> </h2>
+                {% elif prediction == ['REAL']%}
+                <h2 style="color:green;"><b>Looking Real News 📰</b> </h2>
+                {% endif %}
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
