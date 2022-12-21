@@ -4,4 +4,4 @@
 ALGORITHM MUST BE ABLE TO DETECT FAKE NEWS IN A GIVEN SCENARIO.***
 
 
-PUBLISHED ON KAGGLE <a href=https://www.kaggle.com/rahuldhanola/fake-news-detection-using-nlp>HERE</a>
+#### *PUBLISHED ON KAGGLE <a href=https://www.kaggle.com/rahuldhanola/fake-news-detection-using-nlp>HERE</a>*
